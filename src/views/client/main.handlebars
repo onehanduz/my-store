@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-end">
+        <button onclick="location.href = '/client/add'"; class="btn btn-success">Qo'shish</button>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">F.I.O</th>
+            <th scope="col">Tel.</th>
+            <th scope="col">Xaridlar</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each clients}}
+          <tr>
+            <th scope="row"><a href="/client/{{id}}">{{id}}</a></th>
+            <td>{{name}}</td>
+            <td>{{phone}}</td>
+            <td><a href="/client/{{id}}">Ko'rish</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>

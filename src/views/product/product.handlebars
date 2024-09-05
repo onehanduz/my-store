@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-end">
+  <button class="btn btn-success"  onclick="location.href = '/product/add';">Qo'shish</button>
+</div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nomi</th>
+                <th scope="col">Narxi</th>
+                <th scope="col">Qolgan</th>
+                <th scope="col">O'zgartirish</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+            <tr>
+                <th scope="row">{{id}}</th>
+                <td>{{name}}</td>
+                <td>{{price}}</td>
+                <td>{{amount}}</td>
+                <td><a href="/product/update/{{id}}">Tahrir</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table
+    <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+  {{#each page}}
+    <li class="page-item"><a class="page-link" href="/product/page/{{pageNumber}}">{{pageNumber}}</a></li>
+{{/each}}
+  </ul>
+</nav>

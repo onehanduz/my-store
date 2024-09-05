@@ -1,0 +1,71 @@
+<div id="printable-area">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID:</th>
+              <th scope="col">Ismi</th>
+              <th scope="col">Tel.</th>
+              <th scope="col">Manzil</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{client.id}}</th>
+              <td>{{client.name}}</td>
+              <td>{{client.phone}}</td>
+              <td>{{client.address}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex">
+          <h5 class="me-5">Chek IDsi: {{sell.id}}</h5>
+          <h5>Sana: {{sell.created_at}}</h5>
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Mahsulotlar</th>
+              <th scope="col">Soni</th>
+              <th scope="col">Narxi</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each check}}
+            <tr>
+              <th scope="row">{{productName}}</th>
+              <td>{{amount}}</td>
+              <td>{{price}}</td>
+            </tr>
+        {{/each}}
+            </thead>
+            <thead>
+              <tr>
+                <th scope="row">Umumiy</th>
+                <th scope="col">Soni: {{sell.amount}}</th>
+                <th scope="col">Narxi: {{sell.price}}</th>
+              </tr>
+            </thead>
+          </tbody>
+        </table>
+
+  </ul>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          onclick="printContent('printable-area')"
+        >
+          Chop qilish
+        </button>
+      </div>
+ <script>
+    function printContent(sectionId) {
+      var printContents = document.getElementById(sectionId).innerHTML;
+      var originalContents = document.body.innerHTML;
+
+      document.body.innerHTML = printContents;
+      window.print();
+      document.body.innerHTML = originalContents;
+
+      window.location.reload();
+    }
+  </script>

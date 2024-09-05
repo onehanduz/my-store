@@ -1,0 +1,27 @@
+<table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Sana</th>
+            <th scope="col">Mijoz</th>
+            <th scope="col">Chek</th>
+            <th scope="col">Ko'rish</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each sell}}
+          <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{created_at}}</td>
+            <td><a href="/client/{{clientId}}">{{clientName}}</a></td>
+            <td>{{price}}</td>
+            <td><a href="/sell/{{id}}">Ko'rish</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+<ul class="pagination justify-content-end">
+  {{#each page}}
+    <li class="page-item"><a class="page-link" href="/sell/page/{{pageNumber}}">{{pageNumber}}</a></li>
+{{/each}}
+  </ul>

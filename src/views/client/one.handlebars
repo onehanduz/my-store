@@ -1,0 +1,34 @@
+<div>
+        <h1 class="d-flex justify-content-center">{{client.name}}</h1>
+        <div class="d-flex justify-content-end">
+          <button onclick="location.href = '/client/update/{{client.id}}'"; class="btn btn-success">O'zgartirish</button>
+        </div>
+        <h3>ID: {{client.id}}</h3>
+        <h3>Telefon raqami: {{client.phone}}</h3>
+        <h3>Manzil: {{client.address}}</h3>
+        <h3>Xaridlar:</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Sana</th>
+              <th scope="col">Chek</th>
+              <th scope="col">Ko'rish</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each sell}}
+            <tr>
+              <th scope="row">{{id}}</th>
+              <td>{{created_at}}</td>
+              <td>{{price}}</td>
+              <td><a href="/sell/{{id}}">Ko'rish</a></td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <ul class="pagination justify-content-end">
+  {{#each page}}
+    <li class="page-item"><a class="page-link" href="/client/{{../client.id}}/page/{{pageNumber}}">{{pageNumber}}</a></li>
+{{/each}}
+      </div>

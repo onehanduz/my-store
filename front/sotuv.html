@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="public/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="public/css/bootstrap-select.min.css" />
+    <script src="public/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="mb-4">
+        <ul class="nav justify-content-center nav-pills nav-fill">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Kassa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Sotuvlar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Mahsulotlar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Mijozlar</a>
+          </li>
+        </ul>
+      </nav>
+      <div id="printable-area">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID:</th>
+              <th scope="col">Ismi</th>
+              <th scope="col">Tel.</th>
+              <th scope="col">Manzil</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><a href="#">Ismat</a></td>
+              <td>+998995811430</td>
+              <td>Quruvchilar</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-flex">
+          <h5>Chek IDsi:</h5>
+          <h5>Sana:</h5>
+        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Mahsulotlar</th>
+              <th scope="col">Soni</th>
+              <th scope="col">Narxi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Cola 1.5 blok</th>
+              <td>1</td>
+              <td>70 000</td>
+            </tr>
+            <tr>
+              <th scope="row">Cola 1.5 blok</th>
+              <td>1</td>
+              <td>70 000</td>
+            </tr>
+            <tr>
+              <th scope="row">Cola 1.5 blok</th>
+              <td>1</td>
+              <td>70 000</td>
+            </tr>
+            <tr>
+              <th scope="row">Cola 1.5 blok</th>
+              <td>1</td>
+              <td>70 000</td>
+            </tr>
+            <tr>
+              <th scope="row">Cola 1.5 blok</th>
+              <td>1</td>
+              <td>70 000</td>
+            </tr>
+            <thead>
+              <tr>
+                <th scope="col">Umumiy</th>
+                <th scope="col">Soni</th>
+                <th scope="col">Narxi</th>
+              </tr>
+            </thead>
+          </tbody>
+        </table>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          onclick="printContent('printable-area')"
+        >
+          Chop qilish
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    function printContent(sectionId) {
+      var printContents = document.getElementById(sectionId).innerHTML;
+      var originalContents = document.body.innerHTML;
+
+      document.body.innerHTML = printContents;
+      window.print();
+      document.body.innerHTML = originalContents;
+
+      window.location.reload();
+    }
+  </script>
+</html>

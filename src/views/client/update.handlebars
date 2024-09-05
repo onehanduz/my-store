@@ -1,0 +1,39 @@
+<form action="/client/update/{{client.id}}" method="POST">
+        <div>
+          <div class="row g-2">
+            <div class="col mb-3">
+              <label class="form-label">Ismi</label>
+              <input
+                type="text"
+                min="1"
+                name="name"
+                class="form-control"
+                autocapitalize="true"
+                autofocus="true"
+                autocomplete="off"
+                value = {{client.name}}
+              />
+            </div>
+            <div class="col mb-3">
+              <label class="form-label">Telefon raqam</label>
+              <input
+                type="text"
+                min="1"
+                name="phone"
+                class="form-control"
+                autocomplete="off"
+                value = {{client.phone}}
+              />
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="col mb-3">
+              <label class="form-label">Manzil</label>
+              <input type="text" min="1" name="address" class="form-control" value = {{client.address}} />
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary" type="submit">Yuborish</button>
+        </div>
+      </form>
